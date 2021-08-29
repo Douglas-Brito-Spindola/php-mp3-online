@@ -14,9 +14,9 @@
 
         $imagem_album = "{$album}/{$nome_album}.jpg";
     ?>
-    
+
     <div class="col-3" class="album">
-        <a href="?page=musics&algum=<?=$nome_album?>">
+        <a href="?page=musics&album=<?=$nome_album?>">
             <img src="<?=$imagem_album?>" alt="<?=$nome_album?>" class="img-album"> 
             <h4><?=$nome_album?></h4>
         </a> 
