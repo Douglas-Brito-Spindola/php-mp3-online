@@ -1,8 +1,9 @@
+
 <a href="?pge=albums">Voltar para o Album <?=$_GET['album']?></a>
 
 <h1>Cadastrar nova nova musica para o Album <?=$_GET['album']?></h1>
 
-<form action="#" method="post" enctype="multipart/form-data">
+<form action="#" method="POST" enctype="multipart/form-data">
     <div class="form-group">
         <input type="file" name="audio" class="form-control">
     </div>
@@ -15,7 +16,9 @@
 <?php
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    var_dump($_FILES['audio']);
     $album = $_GET['album'];
+
 
     $caminho_musica = "albums/{$album}/musics/";
 
