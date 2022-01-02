@@ -1,7 +1,6 @@
+<a href="?pge=albums">Voltar para o Album <?= $_GET['album'] ?></a>
 
-<a href="?pge=albums">Voltar para o Album <?=$_GET['album']?></a>
-
-<h1>Cadastrar nova nova musica para o Album <?=$_GET['album']?></h1>
+<h1>Cadastrar nova nova musica para o Album <?= $_GET['album'] ?></h1>
 
 <form action="#" method="POST" enctype="multipart/form-data">
     <div class="form-group">
@@ -15,20 +14,19 @@
 
 <?php
 
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     var_dump($_FILES['audio']);
     $album = $_GET['album'];
 
-
     $caminho_musica = "albums/{$album}/musics/";
 
-    if(!is_dir($caminho_musica)){
+    if (!is_dir($caminho_musica)) {
         mkdir($caminho_musica);
     }
 
-    if(move_uploaded_file($_FILES['audio']['tmp_name'], $caminho_musica . $_FILES['audio']['name'])){
+    if (move_uploaded_file($_FILES['audio']['tmp_name'], $caminho_musica . $_FILES['audio']['name'])) {
         header("Location: ?page=musics&album={$album}");
-    }else{
+    } else {
         echo 'Falha no upload';
     }
 }
