@@ -2,14 +2,14 @@
 
 function getAlbums()
 {
-    $albums = glob('albums/*');
+	$albums = glob('albums/*');
 
-    return $albums;
+	return $albums;
 }
 
 function getMusics($album)
 {
-    $musics = glob("albums/{$album}/musics/*.mp3");
+	$musics = glob("albums/{$album}/musics/*.mp3");
 
-    return $musics;
+	return $musics;
 }
